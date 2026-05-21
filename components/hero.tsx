@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { ArrowDown, Linkedin, Mail } from "lucide-react";
 import { profile, social } from "@/lib/data";
+import { asset } from "@/lib/asset";
 
 const fade = {
   hidden: { opacity: 0, y: 16 },
@@ -16,15 +17,22 @@ const fade = {
 export function Hero() {
   return (
     <section className="mx-auto flex min-h-[90vh] w-full max-w-3xl flex-col justify-center px-6 py-24">
-      {/* Avatar placeholder — swap with a real photo in public/avatar.* later. */}
+      {/* Profile photo (from public/, path set in lib/data.ts). */}
       <motion.div
         custom={0}
         variants={fade}
         initial="hidden"
         animate="show"
-        className="mb-8 flex h-16 w-16 items-center justify-center rounded-full bg-fg text-xl font-bold tracking-tight text-bg"
+        className="mb-8 h-24 w-24 overflow-hidden rounded-full border border-border bg-subtle shadow-sm sm:h-28 sm:w-28"
       >
-        {profile.initials}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={asset(profile.avatar)}
+          alt={`Portrait of ${profile.name}`}
+          width={224}
+          height={224}
+          className="h-full w-full object-cover object-[50%_22%]"
+        />
       </motion.div>
 
       <motion.p

@@ -25,8 +25,11 @@ export const profile = {
   // Used for SEO (search engines / link previews). Keep it under ~160 characters.
   metaDescription:
     "Micheal Obianwu Ifeatu — Theatre Art student at the University of Ibadan and aspiring software developer. Portfolio, tech stack, and projects.",
-  // Your initials — used as a fallback avatar and as the small logo in the header.
+  // Your initials — used as the small logo in the header.
   initials: "MO",
+  // Your photo. Lives in the `public/` folder; change the filename here if you
+  // replace it. Used as the hero avatar and the About-section photo.
+  avatar: "/portrait.png",
   // Optional: location text shown in the contact section.
   location: "Ibadan, Nigeria",
 };
